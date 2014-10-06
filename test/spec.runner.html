@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS POA MeetUp</title>
+  <link rel="stylesheet" href="../public/js/vendor/mocha/mocha.css" />
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <script type="text/javascript" src="../public/js/vendor/chai/chai.js"></script>
+  <script type="text/javascript" src="../public/js/vendor/mocha/mocha.js"></script>
+  <script type="text/javascript" src="../public/js/vendor/sinonjs/sinon.js"></script>
+  <script type="text/javascript" src="../public/js/vendor/sinon-chai/lib/sinon-chai.js"></script>
+  <script type="text/javascript">
+    expect = chai.expect;
+    mocha.ui('bdd');
+  </script>
+  <script type="text/javascript" src="../public/js/vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../public/js/vendor/angular/angular.js"></script>
+  <script type="text/javascript" src="../public/js/vendor/angular-mocks/angular-mocks.js"></script>
+
+  <!-- bundled app -->
+  <script type="text/javascript" src="../public/js/dist/app.js"></script>
+
+  <!-- bundled angular templates -->
+  <script type="text/javascript" src="../public/js/dist/templates.js"></script>
+
+  <!-- bundled tests -->
+  <script type="text/javascript" src="../public/js/dist/specs.js"></script>
+
+  <script type="text/javascript">
+    if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+    }
+    else { mocha.run(); }
+  </script>
+</body>
+
+</html>
