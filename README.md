@@ -67,6 +67,8 @@ module.exports = woods.module('my.company.module')
 
 The dependencies are derived from the callback parameters names through parsing process. This mechanism, like AngularJS's one, is not minification safe, thus requiring a build step to annotate properly the injectable definitions (see gulp-angular-annotate plugin for insights).
 
+Implementation [example](https://github.com/nailgun/q-injector/blob/master/lib/injector.js)
+
 ```javascript
 var woods = require('woods.js')
 
