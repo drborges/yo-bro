@@ -11,7 +11,7 @@ require([ 'game/events' ], function (events) {
   // spotlight.shadowCameraVisible = true;
   spotlight.shadowCameraNear = 20;
   spotlight.shadowCameraFar = 500;
-  spotlight.shadowBias = -.0001
+  spotlight.shadowBias = -.0001;
 
   events.emit('scene:object:load', spotlight);
   events.emit('scene:object:load', ambientlight);

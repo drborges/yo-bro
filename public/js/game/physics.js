@@ -4,7 +4,7 @@ define([ 'game/events', 'cannonjs' ], function (events, cannonjs) {
   var groundMaterial = new CANNON.Material("groundMaterial");
   var groundContactMaterial = new CANNON.ContactMaterial(groundMaterial, groundMaterial, {
     friction: 1,
-    restitution: 0.5,
+    restitution: 0.4,
     contactEquationStiffness: 1e8,
     contactEquationRegularizationTime: 3,
     frictionEquationStiffness: 1e8,
@@ -14,9 +14,9 @@ define([ 'game/events', 'cannonjs' ], function (events, cannonjs) {
   var world = new CANNON.World();
   world.quatNormalizeSkip = 0;
   world.quatNormalizeFast = false;
-  world.gravity.set(0, -50, 0);
+  world.gravity.set(0, -200, 0);
   world.broadphase = new CANNON.NaiveBroadphase();
-  world.solver.iterations = 20;
+  world.solver.iterations = 10;
   world.addContactMaterial(groundContactMaterial);
 
   events.on('world:body:add', function (body) {

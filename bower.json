@@ -23,7 +23,9 @@
     "threejs": "*",
     "requirejs": "~2.1.15",
     "threex.keyboardstate": "*",
-    "cannon.js": "~0.6.0"
+    "cannon.js": "~0.6.0",
+    "tweenjs": "*",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",

@@ -1,4 +1,3 @@
-
 define([
   'game/entities/android',
   'game/enhancements/android.mesh',
@@ -10,7 +9,7 @@ define([
 
   var enemy = new Android({
     name: 'Enemy',
-    mass: 10,
+    mass: 5,
     color: Android.colors.red,
     maxVelocity: 40
   });

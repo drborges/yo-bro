@@ -3,11 +3,12 @@ requirejs.config({
   paths: {
     'threejs': 'vendor/threejs/build/three.min',
     'cannonjs': 'vendor/cannon.js/build/cannon',
+    'underscore': 'vendor/underscore/underscore',
     'keyboard': 'vendor/threex.keyboardstate/threex.keyboardstate',
   }
 });
 
-require([ 'threejs', 'cannonjs', 'keyboard' ], function() {
+require([ 'threejs', 'cannonjs', 'underscore', 'keyboard' ], function() {
   require([
     'game/renderer',
     'game/viewport',
