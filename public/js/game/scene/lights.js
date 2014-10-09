@@ -8,7 +8,7 @@ require([ 'game/events' ], function (events) {
 	spotlight.intensity = 2;
   spotlight.castShadow = true;
   spotlight.shadowDarkness = 0.84;
-  // spotlight.shadowCameraVisible = true;
+  spotlight.shadowCameraVisible = true;
   spotlight.shadowCameraNear = 20;
   spotlight.shadowCameraFar = 500;
   spotlight.shadowBias = -.0001;

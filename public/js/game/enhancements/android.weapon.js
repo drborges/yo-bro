@@ -13,15 +13,15 @@ define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events
   };
 
   var fire = function (sourcePosition, sourceQuaternion) {
-    var body = new CANNON.Body({ mass: 0.1 });
+    var body = new CANNON.Body({ mass: 0.01 });
     body.addShape(new CANNON.Sphere(1));
     body.position.copy(sourcePosition)
     body.position = body.position.vadd(direction(sourceQuaternion).scale(6))
     body.linearDamping = 0;
-    body.velocity = direction(sourceQuaternion).scale(300)
+    body.velocity = direction(sourceQuaternion).scale(400)
 
     var geometry = new THREE.SphereGeometry(0.5);
-    var material = new THREE.MeshPhongMaterial({ color: 0xff5555 });
+    var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
     var mesh = new THREE.Mesh(geometry, material);
 
     events.emit('world:body:add', body);

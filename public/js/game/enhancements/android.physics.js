@@ -10,10 +10,10 @@ define([ 'game/events' ], function (events) {
     android.body = body;
 
     events.emit('world:body:add', body);
-    events.on('world:update', function () {
+    events.on('world:body:move', function () {
       if (android.mesh) {
         android.mesh.position.copy(body.position);
-        android.mesh.position.y -= 5
+        android.mesh.position.y = 0.5
         android.mesh.quaternion.copy(android.body.quaternion);
       }
     });

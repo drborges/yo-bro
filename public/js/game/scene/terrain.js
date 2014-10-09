@@ -1,7 +1,7 @@
 require([ 'game/events' ], function (events) {
   var sideSize = 500;
   function addPhysics(mesh) {
-    var shape = new CANNON.Box(new CANNON.Vec3(sideSize/2, 1, sideSize/2));
+    var shape = new CANNON.Box(new CANNON.Vec3(sideSize/2, 2, sideSize/2));
     var body = new CANNON.Body({ mass: 0, material: new CANNON.Material("groundMaterial") });
     body.addShape(shape);
     // body.quaternion.setFromAxisAngle(new CANNON.Vec3(1,0,0),-Math.PI/2);

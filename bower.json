@@ -26,7 +26,8 @@
     "cannon.js": "~0.6.0",
     "tweenjs": "*",
     "underscore": "~1.7.0",
-    "SoundJS": "*"
+    "SoundJS": "*",
+    "dat-gui": "~0.5.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",

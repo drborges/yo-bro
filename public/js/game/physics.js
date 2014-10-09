@@ -4,7 +4,7 @@ define([ 'game/events', 'cannonjs' ], function (events, cannonjs) {
   var groundMaterial = new CANNON.Material("groundMaterial");
   var groundContactMaterial = new CANNON.ContactMaterial(groundMaterial, groundMaterial, {
     friction: 1,
-    restitution: 0.4,
+    restitution: 0.2,
     contactEquationStiffness: 1e8,
     contactEquationRegularizationTime: 3,
     frictionEquationStiffness: 1e8,

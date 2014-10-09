@@ -18,7 +18,7 @@ define([ 'game/events', 'game/keyboard' ], function (events, keyboard) {
     };
 
     events.on('game:update', function (gameInfo) {
-      if (android.mesh && android.body) {
+      if (android.body) {
         var rotationFactor = 5 * gameInfo.delta;
         var moveDistance = android.maxVelocity * gameInfo.delta;
         android.state = android.states.still;
@@ -44,7 +44,8 @@ define([ 'game/events', 'game/keyboard' ], function (events, keyboard) {
         }
 
         if (android.state === android.states.walking) {
-          events.emit('player:move', android.mesh.position);
+          events.emit('player:move', android.body.position);
+          events.emit('world:body:move', android.body.position);
         }
       }
     });
