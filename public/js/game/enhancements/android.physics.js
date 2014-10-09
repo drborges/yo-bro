@@ -3,7 +3,7 @@ define([ 'game/events' ], function (events) {
   return function (android) {
     var body = new CANNON.Body({ mass: android.mass });
     body.android = true
-    body.addShape(new CANNON.Box(new CANNON.Vec3(4, 3, 4)));
+    body.addShape(new CANNON.Box(new CANNON.Vec3(4, 5, 4)));
     body.angularDamping = android.angularDamping;
     body.position.copy(android.position)
 
@@ -13,7 +13,7 @@ define([ 'game/events' ], function (events) {
     events.on('world:update', function () {
       if (android.mesh) {
         android.mesh.position.copy(body.position);
-        android.mesh.position.y -= 3
+        android.mesh.position.y -= 5
         android.mesh.quaternion.copy(android.body.quaternion);
       }
     });

@@ -16,7 +16,7 @@ define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events
     var body = new CANNON.Body({ mass: 0.1 });
     body.addShape(new CANNON.Sphere(1));
     body.position.copy(sourcePosition)
-    body.position.y += 5
+    body.position = body.position.vadd(direction(sourceQuaternion).scale(6))
     body.linearDamping = 0;
     body.velocity = direction(sourceQuaternion).scale(300)
 

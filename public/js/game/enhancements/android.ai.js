@@ -19,6 +19,7 @@ define([ 'game/events' ], function (events) {
         android.body.position = android.body.position.vadd(direction(android.body.quaternion).scale(0.5));
         android.mesh.quaternion.copy(android.body.quaternion)
         android.mesh.position.copy(android.body.position)
+        android.mesh.position.y = 0.5
         android.state = android.states.walking;
       }
     });
