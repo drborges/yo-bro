@@ -13,7 +13,7 @@ define([
     mass: 5,
     strength: 10,
     health: 100,
-    position: new THREE.Vector3(0, 30, 0),
+    position: new THREE.Vector3(0, 20, 0),
     maxVelocity: 50,
   });
 

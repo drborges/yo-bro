@@ -25,7 +25,8 @@
     "threex.keyboardstate": "*",
     "cannon.js": "~0.6.0",
     "tweenjs": "*",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "SoundJS": "*"
   },
   "devDependencies": {
     "mocha": "~1.17.1",

@@ -1,4 +1,6 @@
 define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events, keyboard, camera) {
+  createjs.Sound.registerSound({src:"sounds/laser2b.wav", id:"laser"});
+  createjs.Sound.registerSound({src:"sounds/explode2.ogg", id:"explosion"});
 
   var direction = function (quaternion) {
     var directionQuaternion = quaternion.clone();
@@ -11,11 +13,12 @@ define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events
   };
 
   var fire = function (sourcePosition, sourceQuaternion) {
-    var bodyCenter = new CANNON.Vec3(0, 0, 0);
-    var body = new CANNON.Body({ mass: 1 });
+    var body = new CANNON.Body({ mass: 0.1 });
     body.addShape(new CANNON.Sphere(1));
     body.position.copy(sourcePosition)
-    body.velocity = direction(sourceQuaternion).scale(500)
+    body.position.y += 5
+    body.linearDamping = 0;
+    body.velocity = direction(sourceQuaternion).scale(300)
 
     var geometry = new THREE.SphereGeometry(0.5);
     var material = new THREE.MeshPhongMaterial({ color: 0xff5555 });
@@ -23,6 +26,12 @@ define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events
 
     events.emit('world:body:add', body);
     events.emit('scene:object:load', mesh);
+    createjs.Sound.play("laser");
+
+    body.addEventListener('collide', function (e) {
+      if (e.body.android)
+        createjs.Sound.play("explosion");
+    })
 
     return {
       update: function () {

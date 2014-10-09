@@ -10,6 +10,7 @@ define([
   var enemy = new Android({
     name: 'Enemy',
     mass: 5,
+    position: new THREE.Vector3(30, 0, 0),
     color: Android.colors.red,
     maxVelocity: 40
   });
