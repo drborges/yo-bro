@@ -6,9 +6,10 @@ define([ 'game/events' ], function (events) {
   camera.name = "PerspectiveCamera";
   camera.position.set(-10, 150, 110)
   camera.lookAt(new THREE.Vector3(-10, 0, 10));
+  camera.distance = new THREE.Vector3(0, 150, 100);
 
   events.on('player:move', function (playerPosition) {
-    camera.position.set(playerPosition.x, playerPosition.y + 150, playerPosition.z + 100);
+    camera.position.set(playerPosition.x + camera.distance.x, playerPosition.y + camera.distance.y, playerPosition.z + camera.distance.z);
     camera.lookAt(playerPosition);
   });
 

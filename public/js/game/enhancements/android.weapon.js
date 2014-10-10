@@ -13,7 +13,7 @@ define([ 'game/events', 'game/keyboard', 'game/scene/camera' ], function (events
   };
 
   var fire = function (sourcePosition, sourceQuaternion) {
-    var body = new CANNON.Body({ mass: 0.01 });
+    var body = new CANNON.Body({ mass: 0.5 });
     body.addShape(new CANNON.Sphere(1));
     body.position.copy(sourcePosition)
     body.position = body.position.vadd(direction(sourceQuaternion).scale(6))
